@@ -18,7 +18,7 @@ Serve replacement files when requests are made for non existent documents i.e. f
 
 The .htaccess directives to be added to the root .htaccess file are:
 
-``
+```
 ## Fix missing image and file requests
 ## Change each of the two {REQUEST_URI} lines to specify the missing file 404 requests to check against.
 ## The replacement file(s) to serve should go into a server directory called "missing" located under public_html/
@@ -37,7 +37,8 @@ RewriteCond %{REQUEST_FILENAME} !-f
 ## Put a replacement document in the "missing" directory for each specified file type.
 ## The replacement document can be an empty text file but with the same extension type as the file it is served in place of.
 RewriteCond %{REQUEST_URI} .(css|html?|js|shtml|txt)$ [NC]
-RewriteRule .* /missing/missing.%1 [L]``
+RewriteRule .* /missing/missing.%1 [L]
+```
 
 The files in the 'missing' directory are:
 
