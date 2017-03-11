@@ -11,7 +11,7 @@ RewriteCond %{REQUEST_URI} .(gif|jpe?g|png|bmp|tiff|xcf|psd|ico|svg)$ [NC]
 RewriteRule .* /missing/missing.gif [L]
  
 ## Fix Bad File Requests
-## Ignore specified file(s)
+## Ignore specified virtual file(s)
 RewriteCond %{REQUEST_URI} !^/robots.txt/? [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 ## Add file types to check here.

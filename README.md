@@ -32,7 +32,7 @@ RewriteCond %{REQUEST_URI} .(gif|jpe?g|png|bmp|tiff|xcf|psd|ico|svg)$ [NC]
 RewriteRule .* /missing/missing.gif [L]
  
 ## Fix Bad File Requests
-## Ignore specified file(s)
+## Ignore specified virtual file(s)
 RewriteCond %{REQUEST_URI} !^/robots.txt/? [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 ## Add file types to check here.
@@ -49,6 +49,7 @@ The files in the 'missing' directory are:
 - missing.htm (empty text file)
 - missing.html (empty text file)
 - missing.js (empty text file)
+- missing.php (empty text file)
 - missing.shtml (empty text file)
 - missing.txt (empty text file)
 
