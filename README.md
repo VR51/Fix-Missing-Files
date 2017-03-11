@@ -42,13 +42,13 @@ RewriteRule .* /missing/missing.%1 [L]
 
 The files in the 'missing' directory are:
 
-missing.gif (1px square)
-missing.css (empty text file)
-missing.htm (empty text file)
-missing.html (empty text file)
-missing.js (empty text file)
-missing.shtml (empty text file)
-missing.txt (empty text file)
+-missing.gif (1px square)
+-missing.css (empty text file)
+-missing.htm (empty text file)
+-missing.html (empty text file)
+-missing.js (empty text file)
+-missing.shtml (empty text file)
+-missing.txt (empty text file)
 
 ## More info
 
