@@ -1,21 +1,23 @@
 ## Fix missing image and file requests
-## Change each of the two {REQUEST_URI} lines to specify the missing file 404 requests to check against.
+## Change each of the {REQUEST_URI} lines in each directive set to specify the missing file 404 requests to check against.
 ## The replacement file(s) to serve should go into a server directory called "missing" located under public_html/
+## Image formats go into the Image Set. No file required to be added to the 'missing' directory
+## Other formats go into the File Set. Place an empty text file with correct extension into the 'missing' directory
 ## See https://journalxtra.com/web-development/fix-missing-file-404-requests/
  
-## Fix Bad Image Requests
+## Image Set: Fix Bad Image Requests
 RewriteCond %{REQUEST_FILENAME} !-f
 ## Add image file types to check against here
-RewriteCond %{REQUEST_URI} .(gif|jpe?g|png|bmp|tiff|xcf|psd|ico|svg)$ [NC]
+RewriteCond %{REQUEST_URI} .(gif|jpe?g|png|bmp|tiff|xcf|psd|ico)$ [NC]
 ## Specify the file to serve instead
 RewriteRule .* /missing/missing.gif [L]
  
-## Fix Bad File Requests
+## File Set: Fix Bad File Requests
 ## Ignore specified virtual file(s)
 RewriteCond %{REQUEST_URI} !^/robots.txt/? [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 ## Add file types to check here.
 ## Put a replacement document in the "missing" directory for each specified file type.
 ## The replacement document can be an empty text file but with the same extension type as the file it is served in place of.
-RewriteCond %{REQUEST_URI} .(css|html?|js|php|shtml|txt)$ [NC]
+RewriteCond %{REQUEST_URI} .(css|html?|js|php|shtml|svg|txt)$ [NC]
 RewriteRule .* /missing/missing.%1 [L]
