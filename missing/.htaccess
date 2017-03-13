@@ -1,4 +1,5 @@
 ## Fix missing image and file requests
+## Version 0.0.2
 ## Change each of the {REQUEST_URI} lines in each directive set to specify the missing file 404 requests to check against.
 ## The replacement file(s) to serve should go into a server directory called "missing" located under public_html/
 ## Image formats go into the Image Set. No file required to be added to the 'missing' directory
@@ -13,8 +14,9 @@ RewriteCond %{REQUEST_URI} .(gif|jpe?g|png|bmp|tiff|xcf|psd|ico)$ [NC]
 RewriteRule .* /missing/missing.gif [L]
  
 ## File Set: Fix Bad File Requests
-## Ignore specified virtual file(s)
-RewriteCond %{REQUEST_URI} !^/robots.txt/? [NC]
+## Ignore specific virtual file(s)
+RewriteCond %{REQUEST_URI} !^/?robots.txt/? [NC]
+## Ignore any real files (404s will not occur if the file actually exists)
 RewriteCond %{REQUEST_FILENAME} !-f
 ## Add file types to check here.
 ## Put a replacement document in the "missing" directory for each specified file type.
