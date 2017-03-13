@@ -37,7 +37,7 @@ RewriteRule .* /missing/missing.gif [L]
  
 ## File Set: Fix Bad File Requests
 ## Ignore specific virtual file(s)
-RewriteCond %{REQUEST_URI} !^/robots.txt/? [NC]
+RewriteCond %{REQUEST_URI} !^/robots.txt/?$ [NC]
 ## Ignore any real files (404s will not occur if the file actually exists)
 RewriteCond %{REQUEST_FILENAME} !-f
 ## Add file types to check here.
