@@ -20,6 +20,7 @@ The .htaccess directives to be added to the root .htaccess file are:
 
 ```
 ## Fix missing image and file requests
+## Version 0.0.2
 ## Change each of the {REQUEST_URI} lines in each directive set to specify the missing file 404 requests to check against.
 ## The replacement file(s) to serve should go into a server directory called "missing" located under public_html/
 ## Image formats go into the Image Set. No file required to be added to the 'missing' directory
