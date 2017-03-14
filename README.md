@@ -72,6 +72,16 @@ These are virtual files and file formats encountered by me:
 - xml (created by Jetpack and SEO plugins)
 - robots.txt (created by SEO plugins)
 
+## URL Slugs
+
+If your URLs end with .html or another of the extensions checked in the File Set you will need to remove the extension from File Set.
+
+For example, some WordPress sites use .html at the end of their permalinks. Usually a hangover from a migrated site. The rewrite condition in the File Set would be as follows for sites with such URL slugs:
+
+```
+RewriteCond %{REQUEST_URI} .(css|js|php|shtml|svg|txt)$ [NC]
+```
+
 # Changelog
 
 
